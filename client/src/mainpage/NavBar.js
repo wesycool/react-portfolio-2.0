@@ -13,7 +13,7 @@ function NavBar() {
     ]
 
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow fixed-top">
             <div className="container-fluid">
                 <div className="row">
                     <button className="navbar-toggler col-2 col-sm-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
