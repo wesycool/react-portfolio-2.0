@@ -1,0 +1,15 @@
+.MainPage {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.MainPage .navbar-brand{
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  margin: 0px
+}
+
+.MainPage .nav-item{
+  font-size: small;
+}
