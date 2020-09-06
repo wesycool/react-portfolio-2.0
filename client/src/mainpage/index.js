@@ -10,7 +10,7 @@ function MainPage() {
       <Router>
         <div className="MainPage">
             <NavBar/>
-            <div style={{marginTop:'60px'}}>
+            <div style={{marginTop:'3.875em'}}>
                 <Route exact path="/" component={Home}/>
                 <Footer/>
             </div>

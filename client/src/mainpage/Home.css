@@ -1,0 +1,40 @@
+.MainPage .main-bg {
+    height:calc(100vh - 8.9375em);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.MainPage blockquote {
+    background: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: grey;
+    padding: 1.5vw;
+    position: relative;
+    width: 30vw;
+    left: 50vw;
+    top: 15vh
+}
+
+.MainPage blockquote p::before {
+    content: '\201C';
+}
+
+.MainPage blockquote p::after {
+    content: '\201D';
+}
+
+@media screen and (orientation: landscape) and (max-width: 1023px){
+    .MainPage blockquote {
+        font-size: small;
+        width: 35vw;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1365px){
+    .MainPage blockquote {
+        font-size: large;
+    }
+}

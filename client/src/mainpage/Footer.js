@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer(){
 
@@ -11,11 +11,11 @@ function Footer(){
                         <Link to="/" className="navbar-brand">E D M U N D</Link>
                     </div>
 
-                    <div className='col-12 col-md-7 col-xl-8 pt-2 mt-1 text-md-right text-secondary'>
+                    <div className='col-12 col-sm-6 col-md-7 col-xl-8 pt-2 mt-1 text-sm-right text-secondary'>
                         Stay Connected.
                     </div>
 
-                    <nav className="nav col-12 col-md justify-content-md-end mr-md-2 mr-lg-5">
+                    <nav className="nav col-12 col-sm justify-content-sm-center justify-content-md-end mr-md-2 mr-lg-5">
                         <Link to={{pathname:"https://github.com/wesycool"}} className="nav-link link-secondary" target='_blank'><i className="fab fa-github-square"></i></Link>
                         <Link to={{pathname:"https://www.linkedin.com/in/ed-wong-bpm/"}} className="nav-link link-secondary" target='_blank'><i className="fab fa-linkedin"></i></Link>
                     </nav>

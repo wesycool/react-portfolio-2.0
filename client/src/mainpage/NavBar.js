@@ -30,7 +30,7 @@ function NavBar() {
 
                             {navItem.map(({name,link}) => {
                                 return(
-                                    <li className="nav-item">
+                                    <li className="nav-item" key={name.toLowerCase()}>
                                         <Link to={link} className={`nav-link ${pathname === link ? "active" : ""}`}>
                                             {name}
                                         </Link>
