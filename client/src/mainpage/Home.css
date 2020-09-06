@@ -26,6 +26,8 @@
     content: '\201D';
 }
 
+
+/* Landscape Mode */
 @media screen and (orientation: landscape) and (max-width: 1023px){
     .MainPage blockquote {
         font-size: small;
@@ -33,7 +35,34 @@
     }
 }
 
-@media screen and (orientation: landscape) and (min-width: 1365px){
+@media screen and (orientation: landscape) and (min-width: 1366px){
+    .MainPage blockquote {
+        font-size: large;
+    }
+}
+
+
+/* Protrait Mode */
+@media screen and (orientation: portrait) {
+    .MainPage .main-bg {
+        background-position: center top;
+    }
+
+    .MainPage blockquote {
+        width: 40vw;
+        left: 30vw;
+    }
+}
+
+@media screen and (orientation: portrait) and (max-width: 767px){
+    .MainPage blockquote {
+        font-size: small;
+        width: 70vw;
+        left: 15vw;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 1024px){
     .MainPage blockquote {
         font-size: large;
     }
