@@ -1,26 +1,16 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
+import Jumbotron from "../component/Jumbotron"
 import './Home.css'
 
 function Home(){
-    const [ mainBG, setMainBG ] = useState()
-
-    useEffect(() => {
-        const handleResize = () => {
-            const orientation = window.screen.orientation.type.split('-')
-            setMainBG(`./assets/img/mainBG-${orientation[0]}.jpg`)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-    },[])
+    const info = {
+        title : 'main',
+        p : 'To improve is to change;<br/>to be perfect is to change often',
+        footer: '~ Winston Churchill ~'
+    }
 
     return(
-        <div className="main-bg" style={{backgroundImage:`url(${mainBG})`}}>
-            <blockquote>
-                <p>To improve is to change;<br/>to be perfect is to change often</p>
-                <footer>~ Winston Churchill ~</footer>
-            </blockquote>
-        </div>
+        <Jumbotron page={info} />
     )
 }
 

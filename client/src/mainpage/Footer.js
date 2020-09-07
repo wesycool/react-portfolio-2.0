@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer(){
 
     return(
-        <nav className="navbar navbar-expand-md navbar-light bg-light fixed-bottom">
+        <nav className="navbar navbar-expand-md navbar-light bg-light">
             <div className="container-fluid ml-md-2 ml-lg-5">
                 <div className='row'>
                     <div className='col mt-1'>

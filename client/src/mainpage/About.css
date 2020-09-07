@@ -1,0 +1,18 @@
+.MainPage .about-bg {
+    height:calc(100vh - 8.9375em);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.MainPage .about-bg blockquote {
+    color: white;
+    position: relative;
+    font-size: small;
+    top: 35vh
+}
+
+.MainPage .about-bg blockquote h1{
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}

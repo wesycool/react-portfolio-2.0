@@ -3,9 +3,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    filter: grayscale(100%);
 }
 
-.MainPage blockquote {
+.MainPage .main-bg blockquote {
     background: rgba(255, 255, 255, 0.80);
     text-align: center;
     font-style: italic;
@@ -18,25 +19,25 @@
     top: 15vh
 }
 
-.MainPage blockquote p::before {
+.MainPage .main-bg blockquote p::before {
     content: '\201C';
 }
 
-.MainPage blockquote p::after {
+.MainPage .main-bg blockquote p::after {
     content: '\201D';
 }
 
 
 /* Landscape Mode */
 @media screen and (orientation: landscape) and (max-width: 1023px){
-    .MainPage blockquote {
+    .MainPage .main-bg blockquote {
         font-size: small;
         width: 35vw;
     }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1366px){
-    .MainPage blockquote {
+    .MainPage .main-bg blockquote {
         font-size: large;
     }
 }
@@ -48,22 +49,27 @@
         background-position: center top;
     }
 
-    .MainPage blockquote {
+    .MainPage .main-bg blockquote {
         width: 40vw;
         left: 30vw;
     }
 }
 
 @media screen and (orientation: portrait) and (max-width: 767px){
-    .MainPage blockquote {
+    .MainPage .main-bg {
+        height:calc(100vh - 13.6875em);
+    }
+
+    .MainPage .main-bg blockquote {
         font-size: small;
         width: 70vw;
         left: 15vw;
     }
+
 }
 
 @media screen and (orientation: portrait) and (min-width: 1024px){
-    .MainPage blockquote {
+    .MainPage .main-bg blockquote {
         font-size: large;
     }
 }
