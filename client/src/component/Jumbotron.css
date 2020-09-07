@@ -1,0 +1,24 @@
+.jumbotron {
+    height:calc(100vh - 8.9375em);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron blockquote{
+    position: relative;
+    margin: 0px;
+}
+
+.quotes::before {
+    content: '\201C';
+}
+
+.quotes::after {
+    content: '\201D';
+}
+
+@media screen and (orientation: portrait) and (max-width: 767px){
+    .jumbotron {
+        height:calc(100vh - 13.6875em);
+    }
+}

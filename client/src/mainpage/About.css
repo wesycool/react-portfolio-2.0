@@ -1,40 +1,27 @@
-.MainPage .about-bg {
-    height:calc(100vh - 8.9375em);
-    background-size: cover;
-    background-repeat: no-repeat;
+.about-bg {
     background-position: center;
 }
 
-.MainPage .about-bg blockquote {
-    color: white;
-    position: relative;
+.about-bg blockquote {
     font-size: small;
-    top: 35vh
+    color: white;
+    top: 50%
 }
 
-.MainPage .about-bg blockquote h1{
-    font-family: 'Dosis', sans-serif;
-    font-weight: bold;
+@media screen and (orientation: landscape) and (max-width: 823px){
+    .about-bg {
+        background-position: 50% 30%;
+    }
+    .about-bg blockquote {
+        top: 30%
+    }
+    .about-bg blockquote p, .about-bg blockquote .btn-sm{
+        font-size: x-small;
+    }
 }
 
 @media screen and (orientation: portrait) {
-    .MainPage .about-bg blockquote {
-        top: 55vh
-    }
-}
-
-@media screen and (orientation: portrait) and (max-width: 767px){
-    .MainPage .about-bg {
-        height:calc(100vh - 13.6875em);
-    }
-
-    .MainPage .about-bg blockquote {
-        top: 45vh
-    }
-}
-
-@media screen and (orientation: portrait) and (height: 568px){
-    .MainPage .about-bg blockquote {
-        top: 40vh
+    .about-bg blockquote {
+        top: 65%
     }
 }

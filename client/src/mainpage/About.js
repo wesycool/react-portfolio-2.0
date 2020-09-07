@@ -7,11 +7,16 @@ function About(){
         title : 'about',
         h1: 'EDMUND WONG.',
         p : 'LEAN PROCESS CONSULTANT.',
+        quotes: false,
         btn: 'DOWNLOAD RESUME'
     }
 
     return(
-        <Jumbotron page={info} />
+        <div>
+            <Jumbotron info={info} />
+            <div>
+            </div>
+        </div>
     )
 }
 

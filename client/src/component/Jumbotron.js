@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react"
 import { Link } from "react-router-dom";
+import './Jumbotron.css'
 
-function Jumbotron({page}){
+function Jumbotron({info}){
     const [ background, setBackground ] = useState()
 
     useEffect(() => {
         const handleResize = () => {
             const orientation = window.screen.orientation.type.split('-')
-            setBackground(`./assets/img/${page.title}BG-${orientation[0]}.jpg`)
+            setBackground(`./assets/img/${info.title}BG-${orientation[0]}.jpg`)
         }
 
         handleResize()
@@ -15,13 +16,13 @@ function Jumbotron({page}){
     },[])
 
     return(
-        <div className={`${page.title}-bg`} style={{backgroundImage:`url(${background})`}}>
-            <div className='container-fluid'>
+        <div className={`${info.title}-bg jumbotron`} style={{backgroundImage:`url(${background})`}}>
+            <div className='container-fluid' style={{height: '100%'}}>
                 <blockquote className="ml-md-2 ml-lg-5">
-                    <h1>{page.h1}</h1>
-                    <p dangerouslySetInnerHTML={{ __html: page.p}}></p>
-                    <footer>{page.footer}</footer>
-                    {page.btn? <Link to="/" className="btn btn-secondary btn-sm">{page.btn}</Link> : ''}
+                    <h1 className='dosis'>{info.h1}</h1>
+                    <p className={info.quotes? 'quotes' : ''} dangerouslySetInnerHTML={{ __html: info.p}}></p>
+                    <footer>{info.footer}</footer>
+                    {info.btn? <Link to="/" className="btn btn-secondary btn-sm">{info.btn}</Link> : ''}
                 </blockquote>
             </div>
         </div>

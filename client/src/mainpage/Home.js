@@ -6,11 +6,14 @@ function Home(){
     const info = {
         title : 'main',
         p : 'To improve is to change;<br/>to be perfect is to change often',
+        quotes: true,
         footer: '~ Winston Churchill ~'
     }
 
     return(
-        <Jumbotron page={info} />
+        <div>
+            <Jumbotron info={info} />
+        </div>
     )
 }
 

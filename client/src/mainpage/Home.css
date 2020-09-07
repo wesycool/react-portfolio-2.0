@@ -1,43 +1,28 @@
-.MainPage .main-bg {
-    height:calc(100vh - 8.9375em);
-    background-size: cover;
-    background-repeat: no-repeat;
+.main-bg {
     background-position: bottom;
-    filter: grayscale(100%);
 }
 
-.MainPage .main-bg blockquote {
+.main-bg blockquote {
     background: rgba(255, 255, 255, 0.80);
     text-align: center;
     font-style: italic;
     font-weight: bold;
     color: grey;
     padding: 1.5vw;
-    position: relative;
-    width: 30vw;
-    left: 45vw;
-    top: 15vh
+    width: 35%;
+    left: 50%;
+    top: 20%
 }
-
-.MainPage .main-bg blockquote p::before {
-    content: '\201C';
-}
-
-.MainPage .main-bg blockquote p::after {
-    content: '\201D';
-}
-
 
 /* Landscape Mode */
 @media screen and (orientation: landscape) and (max-width: 1023px){
-    .MainPage .main-bg blockquote {
-        font-size: small;
-        width: 35vw;
+    .main-bg blockquote {
+        font-size: x-small;
     }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1366px){
-    .MainPage .main-bg blockquote {
+    .main-bg blockquote {
         font-size: large;
     }
 }
@@ -45,31 +30,31 @@
 
 /* Protrait Mode */
 @media screen and (orientation: portrait) {
-    .MainPage .main-bg {
-        background-position: center top;
+    .main-bg {
+        background-position: top;
     }
 
-    .MainPage .main-bg blockquote {
-        width: 40vw;
-        left: 30vw;
+    .main-bg blockquote {
+        width: 40%;
+        left: 30%;
     }
 }
 
 @media screen and (orientation: portrait) and (max-width: 767px){
-    .MainPage .main-bg {
+    .main-bg {
         height:calc(100vh - 13.6875em);
     }
 
-    .MainPage .main-bg blockquote {
-        font-size: small;
-        width: 70vw;
-        left: 15vw;
+    .main-bg blockquote {
+        font-size: x-small;
+        width: 60%;
+        left: 20%;
     }
 
 }
 
 @media screen and (orientation: portrait) and (min-width: 1024px){
-    .MainPage .main-bg blockquote {
+    .main-bg blockquote {
         font-size: large;
     }
 }
