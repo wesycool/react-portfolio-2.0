@@ -16,3 +16,25 @@
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
 }
+
+@media screen and (orientation: portrait) {
+    .MainPage .about-bg blockquote {
+        top: 55vh
+    }
+}
+
+@media screen and (orientation: portrait) and (max-width: 767px){
+    .MainPage .about-bg {
+        height:calc(100vh - 13.6875em);
+    }
+
+    .MainPage .about-bg blockquote {
+        top: 45vh
+    }
+}
+
+@media screen and (orientation: portrait) and (height: 568px){
+    .MainPage .about-bg blockquote {
+        top: 40vh
+    }
+}

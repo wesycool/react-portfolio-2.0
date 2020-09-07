@@ -5,7 +5,7 @@ import './About.css'
 function About(){
     const info = {
         title : 'about',
-        h1: 'EDMUND WONG',
+        h1: 'EDMUND WONG.',
         p : 'LEAN PROCESS CONSULTANT.',
         btn: 'DOWNLOAD RESUME'
     }
