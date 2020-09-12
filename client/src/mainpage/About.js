@@ -6,9 +6,10 @@ function About(){
     const info = {
         title : 'about',
         h1: 'EDMUND WONG.',
-        p : 'LEAN PROCESS CONSULTANT.',
+        p : 'LEAN PROCESS CONSULTANT & MOBILE DEVELOPER.',
         quotes: false,
-        btn: 'DOWNLOAD RESUME'
+        btn: 'DOWNLOAD RESUME',
+        link: './assets/pdf/resume.pdf'
     }
 
     return(

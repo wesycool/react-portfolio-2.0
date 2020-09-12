@@ -4,6 +4,7 @@ import './index.css'
 import NavBar from "./NavBar"
 import Footer from "./Footer"
 import Home from "./Home"
+import Portfolio from "./Portfolio"
 import About from "./About"
 
 
@@ -14,6 +15,7 @@ function MainPage() {
             <NavBar/>
             <div style={{marginTop:'3.875em'}}>
                 <Route exact path="/" component={Home}/>
+                <Route exact path="/portfolio" component={Portfolio}/>
                 <Route exact path="/about" component={About}/>
                 <Footer/>
             </div>

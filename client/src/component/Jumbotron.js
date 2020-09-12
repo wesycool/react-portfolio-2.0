@@ -22,7 +22,7 @@ function Jumbotron({info}){
                     <h1 className='dosis'>{info.h1}</h1>
                     <p className={info.quotes? 'quotes' : ''} dangerouslySetInnerHTML={{ __html: info.p}}></p>
                     <footer>{info.footer}</footer>
-                    {info.btn? <Link to="/" className="btn btn-secondary btn-sm">{info.btn}</Link> : ''}
+                    {info.btn? <Link to={info.link} className="btn btn-secondary btn-sm" target='_blank'>{info.btn}</Link> : ''}
                 </blockquote>
             </div>
         </div>
