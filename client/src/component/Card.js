@@ -11,7 +11,7 @@ function Card({item}){
                     <h3 className="card-title text-uppercase dosis">{item.title}</h3>
                     <hr className='bg-secondary' style={{height: '5px', opacity:'100%'}}/>
                     <p className="card-text">{item.description}</p>
-                    <Link to="/" className="btn btn-secondary btn-sm">VIEW PROJECT</Link>
+                    <Link to={`/portfolio/${item.title.toLowerCase().replaceAll(' ','-')}`} className="btn btn-secondary btn-sm">VIEW PROJECT</Link>
                 </div>
             </div>
         </div>
