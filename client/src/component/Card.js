@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 function Card({item}){
 
-    console.log(item)
-
     return(
         <div className='col-12 col-md-4 mt-3 mb-3'>
             <div className="card shadow mb-3" style={{height:'100%'}}>

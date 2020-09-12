@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import Card from "../component/Card"
 
 function Portfolio(){
@@ -17,8 +18,15 @@ function Portfolio(){
     ]
     return(
         <div className='container'>
-            <div className='row'>
-
+            <div className='shadow-sm' style={{background:'url(./assets/img/portfolioBG.jpg) center', height:'150px', backgroundSize:'cover'}}>
+                <h2 className="doris text-uppercase text-center" style={{paddingTop:'50px'}}>Portfolio</h2>
+            </div>
+            <div className='row mt-3'>
+                <u className='nav text-uppercase' style={{fontSize:'small'}}>
+                    <Link to='' className='nav-link text-dark'>All</Link>
+                    <Link to='' className='nav-link link-secondary'>Web Dev</Link>
+                    <Link to='' className='nav-link link-secondary'>Mobile App</Link>
+                </u>
             </div>
             <div className='row'>
                 {item.map((item) => <Card item={item}/>)}
