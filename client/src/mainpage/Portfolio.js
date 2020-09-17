@@ -25,7 +25,7 @@ function Portfolio(){
     return(
         <div className='container'>
             <div className='shadow-sm' style={{background:'url(./assets/img/portfolioBG.jpg) center', height:'150px', backgroundSize:'cover'}}>
-                <h1 className="dosis text-uppercase font-weight-bold text-center pt-5">Portfolio</h1>
+                <h1 className="dosis text-uppercase text-center pt-5">Portfolio</h1>
             </div>
             <div className='row mt-4 ml-2'>
                 <u className='nav'>
