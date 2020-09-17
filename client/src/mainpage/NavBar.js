@@ -3,14 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
     const {pathname} = useLocation()
-    const navItem = [
-        { 'name': 'HOME', 'link': '/' },
-        { 'name': 'SERVICE', 'link': '/service' },
-        { 'name': 'PORTFOLIO', 'link': '/portfolio' },
-        { 'name': 'BLOG', 'link': '/blog' },
-        { 'name': 'ABOUT', 'link': '/about' },
-        { 'name': 'CONTACT', 'link': '/contact' }
-    ]
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow fixed-top">
@@ -27,17 +19,24 @@ function NavBar() {
 
                     <div className="collapse navbar-collapse col-12 col-md mr-md-2 mr-lg-5 justify-content-end" id="navbarSupportedContent">
                         <ul className="navbar-nav mb-md-0 mt-2">
-
-                            {navItem.map(({name,link}) => {
-                                return(
-                                    <li className="nav-item" key={name.toLowerCase()}>
-                                        <Link to={link} className={`nav-link ${pathname === link ? "active" : ""}`}>
-                                            {name}
-                                        </Link>
-                                    </li>
-                                )
-                            })}
-
+                            <li className="nav-item text-uppercase">
+                                <Link to='/' className={`nav-link ${`/${pathname.split('/')[1]}` === '/' ? "active" : ""}`}>Home</Link>
+                            </li>
+                            <li className="nav-item text-uppercase">
+                                <Link to='/service' className={`nav-link ${`/${pathname.split('/')[1]}` === '/service' ? "active" : ""}`}>Service</Link>
+                            </li>
+                            <li className="nav-item text-uppercase">
+                                <Link to='/portfolio' className={`nav-link ${`/${pathname.split('/')[1]}` === '/portfolio' ? "active" : ""}`}>Portfolio</Link>
+                            </li>
+                            <li className="nav-item text-uppercase">
+                                <Link to='/blog' className={`nav-link ${`/${pathname.split('/')[1]}` === '/blog' ? "active" : ""}`}>Blog</Link>
+                            </li>
+                            <li className="nav-item text-uppercase">
+                                <Link to='/about' className={`nav-link ${`/${pathname.split('/')[1]}` === '/about' ? "active" : ""}`}>About</Link>
+                            </li>
+                            <li className="nav-item text-uppercase">
+                                <Link to='/contact' className={`nav-link ${`/${pathname.split('/')[1]}` === '/contact' ? "active" : ""}`}>Contact</Link>
+                            </li>
                         </ul>
                     </div>
 
