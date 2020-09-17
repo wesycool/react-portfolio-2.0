@@ -3,10 +3,10 @@ import Card from "../component/Card"
 import PortfolioContext from "../component/PortfolioContext"
 
 function Portfolio(){
-    const context = useContext(PortfolioContext)
     const [itemList , setItemList] = useState([])
     const [filterBtn, setFilterBtn] = useState([])
     const [activeFilter, setActiveFilter] = useState('all')
+    const context = useContext(PortfolioContext)
 
 
     useEffect(() => {

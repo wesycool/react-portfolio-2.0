@@ -4,10 +4,11 @@ import './index.css'
 import NavBar from "./NavBar"
 import Footer from "./Footer"
 import Home from "./Home"
-import Portfolio from "./Portfolio"
 import About from "./About"
-import PortfolioContext from "../component/PortfolioContext"
 
+import PortfolioContext from "../component/PortfolioContext"
+import Portfolio from "./Portfolio"
+import Project from './Project'
 
 function MainPage() {
     const item = [
@@ -34,6 +35,7 @@ function MainPage() {
 
                 <PortfolioContext.Provider value={item}>
                     <Route exact path="/portfolio" component={Portfolio}/>
+                    <Route path="/portfolio/:project" component={Project}/>
                 </PortfolioContext.Provider>
                 <Footer/>
             </div>
