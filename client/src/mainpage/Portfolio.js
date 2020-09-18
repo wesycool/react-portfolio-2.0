@@ -15,7 +15,6 @@ function Portfolio(){
         setItemList(context)
     },[])
 
-
     const filterItem = ({target:{value}}) => {
         const filtered = context.filter( ({category}) => {return value === 'all' || value === category })
         setItemList(filtered)

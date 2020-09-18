@@ -5,7 +5,7 @@ import './Project.css'
 
 function Project() {
     const {pathname} = useLocation()
-    const [getProject, setProject] = useState({})
+    const [getProject, setProject] = useState({description:[]})
     const context = useContext(PortfolioContext)
 
     useEffect( () => {
@@ -22,13 +22,16 @@ function Project() {
                     <div style={{color:'white', padding:'10%', paddingTop:'min(5vh,5vw)'}}>
                         <h2 className="dosis text-uppercase" style={{fontSize:'max(5vw,5vh)'}}>{getProject.title}</h2>
                         <hr className="bg-info" style={{height: '3px', opacity:'100%'}}/>
-                        <p style={{fontSize:'min(3.25vw,3.25vh, 20px)',fontWeight:'bold',paddingLeft:'3%', paddingRight:'3%'}}>{getProject.description}</p>
+                        <p style={{fontSize:'min(3.25vw,3.25vh, 20px)',fontWeight:'bold',paddingLeft:'3%', paddingRight:'3%'}}>{getProject.summary}</p>
                         <Link to={getProject.link} className="btn btn-info" style={{fontSize:'min(3.25vw,3.25vh, 15px)'}}>View Website</Link>
                     </div>
                 </div>
             </div>
-            <div>
-
+                
+            <div className='mt-4'>
+                <h1 className="dosis">About {getProject.title}</h1>
+                <hr className="bg-info" style={{height: '3px', opacity:'100%'}}/>
+                { getProject.description.map( (value) => <p key={value}>{value}</p>) }
             </div>
         </div>
     )
