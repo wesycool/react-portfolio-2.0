@@ -1,9 +1,7 @@
 const express = require('express')
 const apiRouter = require('./app/router')
 const app = express()
-const orm = require('./app/orm.js');
 const mongoose = require( 'mongoose' );
-const API_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'
 
 const PORT = process.env.PORT || 8080
 

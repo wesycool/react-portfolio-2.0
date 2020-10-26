@@ -22,7 +22,7 @@ function Portfolio(){
     }
 
     return(
-        <div className='container'>
+        <div className='container mb-5'>
             <div className='shadow-sm' style={{background:'url(./assets/img/portfolioBG.jpg) center', height:'150px', backgroundSize:'cover'}}>
                 <h1 className="dosis text-uppercase text-center pt-5">Portfolio</h1>
             </div>

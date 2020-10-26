@@ -22,3 +22,13 @@
 .MainPage i{
   font-size: xx-large;
 }
+
+.MainPage .body{
+  min-height:calc(100vh - 8.9375em)
+}
+
+@media screen and (orientation: portrait) and (max-width: 767px){
+  .MainPage .body{
+    min-height:calc(100vh - 13.6875em);
+  }
+}

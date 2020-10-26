@@ -22,15 +22,15 @@ function NavBar() {
                             <li className="nav-item text-uppercase">
                                 <Link to='/' className={`nav-link ${`/${pathname.split('/')[1]}` === '/' ? "active" : ""}`}>Home</Link>
                             </li>
-                            <li className="nav-item text-uppercase">
+                            {/* <li className="nav-item text-uppercase">
                                 <Link to='/service' className={`nav-link ${`/${pathname.split('/')[1]}` === '/service' ? "active" : ""}`}>Service</Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item text-uppercase">
                                 <Link to='/portfolio' className={`nav-link ${`/${pathname.split('/')[1]}` === '/portfolio' ? "active" : ""}`}>Portfolio</Link>
                             </li>
-                            <li className="nav-item text-uppercase">
+                            {/* <li className="nav-item text-uppercase">
                                 <Link to='/blog' className={`nav-link ${`/${pathname.split('/')[1]}` === '/blog' ? "active" : ""}`}>Blog</Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item text-uppercase">
                                 <Link to='/about' className={`nav-link ${`/${pathname.split('/')[1]}` === '/about' ? "active" : ""}`}>About</Link>
                             </li>

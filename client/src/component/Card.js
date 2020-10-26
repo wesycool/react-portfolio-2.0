@@ -9,7 +9,7 @@ function Card({item}){
                 <img src={`./assets/project/${item.title.split(' ').join('-').toLowerCase()}.jpg`} className="card-img-top" alt={item.title}/>
                 <div className="card-body ml-3 mr-3">
                     <h3 className="card-title text-uppercase dosis">{item.title}</h3>
-                    <hr className='bg-secondary' style={{height: '5px', opacity:'100%'}}/>
+                    <hr className='bg-secondary' style={{height: '3px', opacity:'100%'}}/>
                     <p className="card-text">{item.summary}</p>
                     <Link to={`/portfolio/${item.title.toLowerCase().replaceAll(' ','-')}`} className="btn btn-secondary btn-sm">VIEW PROJECT</Link>
                 </div>
