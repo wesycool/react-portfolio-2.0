@@ -13,6 +13,7 @@ function Project() {
             return title.split(' ').join('-').toLowerCase() === pathname.split('/')[2]
         })
         setProject(project[0])
+        window.scrollTo(0, 0)
     }, [])
 
     return(

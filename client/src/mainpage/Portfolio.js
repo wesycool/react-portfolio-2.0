@@ -13,6 +13,7 @@ function Portfolio(){
         const newFilterBtn = new Set(context.map(({category}) => category))
         setFilterBtn(['all',...newFilterBtn])
         setItemList(context)
+        window.scrollTo(0, 0)
     },[])
 
     const filterItem = ({target:{value}}) => {
@@ -23,7 +24,7 @@ function Portfolio(){
 
     return(
         <div className='container mb-5'>
-            <div className='shadow-sm' style={{background:'url(./assets/img/portfolioBG.jpg) center', height:'150px', backgroundSize:'cover'}}>
+            <div className='shadow-sm' style={{background:'url(./assets/img/portfolioBG.jpg)', height:'150px', backgroundSize:'cover'}}>
                 <h1 className="dosis text-uppercase text-center pt-5">Portfolio</h1>
             </div>
             <div className='row mt-4 ml-2'>
