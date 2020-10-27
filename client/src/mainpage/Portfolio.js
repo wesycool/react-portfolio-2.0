@@ -28,13 +28,13 @@ function Portfolio(){
             </div>
             <div className='row mt-4 ml-2'>
                 <u className='nav'>
-                    {filterBtn.map( (value) => 
-                        <button onClick={filterItem} value={value} className={`btn btn-sm ${value === activeFilter? 'text-dark' : 'link-secondary' } text-uppercase`}>{value}</button>
+                    {filterBtn.map( (value,key) => 
+                        <button onClick={filterItem} value={value} className={`btn btn-sm ${value === activeFilter? 'text-dark' : 'link-secondary' } text-uppercase`} key={key}>{value}</button>
                     )}
                 </u>
             </div>
             <div className='row'>
-                {itemList.map((item) => <Card item={item}/>)}
+                {itemList.map((item,key) => <Card item={item} key={key}/>)}
             </div>
         </div>
 

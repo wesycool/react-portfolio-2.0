@@ -6,7 +6,9 @@ const projectSchema = new Schema({
     category: String, 
     summary: String, 
     description:[String],
-    link: String
+    tools: [String],
+    github: String,
+    link: [String]
 })
 
 
