@@ -3,21 +3,17 @@ import Card from "../component/Card"
 import PortfolioContext from "../component/PortfolioContext"
 
 function Portfolio(){
-    const [itemList , setItemList] = useState([])
-    const [filterBtn, setFilterBtn] = useState([])
-    const [activeFilter, setActiveFilter] = useState('all')
     const context = useContext(PortfolioContext)
+    const category = new Set(context.map(({category}) => category).sort())
+    const filterBtn = ['all', ...category]
+    const [itemList , setItemList] = useState([])
+    const [activeFilter, setActiveFilter] = useState('all')
 
-
-    useEffect(() => {
-        const newFilterBtn = new Set(context.map(({category}) => category))
-        setFilterBtn(['all',...newFilterBtn])
-        setItemList(context)
-        window.scrollTo(0, 0)
-    },[])
-
+    useEffect(()=> window.scrollTo(0, 0),[])
+    useEffect(() => setItemList(context),[context])
+    
     const filterItem = ({target:{value}}) => {
-        const filtered = context.filter( ({category}) => {return value === 'all' || value === category })
+        const filtered = context.filter( ({category}) => ['all',category].includes(value) )
         setItemList(filtered)
         setActiveFilter(value)
     }
@@ -38,7 +34,6 @@ function Portfolio(){
                 {itemList.map((item,key) => <Card item={item} key={key}/>)}
             </div>
         </div>
-
     )
 }
 
