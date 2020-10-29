@@ -12,8 +12,8 @@ function Jumbotron({info:{title,p,h1,quotes,link,footer,btn}}){
     },[])
 
     const orientationChange = () =>{
-        const {width,height} = window.screen
-        const orientation = width < height? 'portrait' : 'landscape'    
+        const {innerWidth,innerHeight} = window
+        const orientation = innerWidth < innerHeight? 'portrait' : 'landscape'    
         setBackground(`./assets/img/${title}BG-${orientation}.jpg`)
     }
 
