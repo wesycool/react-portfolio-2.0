@@ -5,7 +5,7 @@ const mongoose = require( 'mongoose' );
 
 const PORT = process.env.PORT || 8080
 
-mongoose.connect("mongodb://localhost/portfolio" , 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/portfolio" , 
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
  // for serving all the normal html
