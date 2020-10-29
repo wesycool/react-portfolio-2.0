@@ -1,18 +1,19 @@
 import React, {useState, useContext, useEffect} from "react"
 import {useLocation} from "react-router-dom"
+import HeadContext from "../component/HeadContext"
 import ProjectLink from "../component/ProjectLink"
 import PortfolioContext from "../component/PortfolioContext"
 import './Project.css'
 
 function Project() {
+    const setHeadTitle = useContext(HeadContext)
     const context = useContext(PortfolioContext)
-    const pathTitle = useLocation()['pathname'].split('/')[2]
+    const pathTitle = useLocation().pathname.split('/')[2]
     const [getProject, setProject] = useState({description:[],tools:[],link:[]})
     const {title, summary, description, tools, github, link} = getProject
-
-    console.log(title)
-
+    
     useEffect(()=> window.scrollTo(0, 0),[])
+    useEffect(()=> setHeadTitle(pathTitle),[])
     useEffect(()=> {
         const project = !context.length? getProject : context.find( ({title}) => title.toLowerCase().replace(' ','-') === pathTitle)
         setProject(project)

@@ -1,8 +1,14 @@
 import React, {useState, useContext, useEffect} from "react"
+import {useLocation} from "react-router-dom"
 import Card from "../component/Card"
+import HeadContext from "../component/HeadContext"
 import PortfolioContext from "../component/PortfolioContext"
 
 function Portfolio(){
+    const setHeadTitle = useContext(HeadContext)
+    const location = useLocation().pathname.split('/')
+    useEffect(()=> setHeadTitle(location[location.length -1]),[])
+
     const context = useContext(PortfolioContext)
     const category = new Set(context.map(({category}) => category).sort())
     const filterBtn = ['all', ...category]

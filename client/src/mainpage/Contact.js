@@ -1,11 +1,16 @@
-import React, {useRef} from "react";
+import React, {useRef,useContext, useEffect} from "react";
+import {useLocation} from "react-router-dom"
 import emailjs from 'emailjs-com';
+import HeadContext from "../component/HeadContext"
 import './Contact.css'
 require('dotenv').config()
 
 
 function Contact(){
-
+    const setHeadTitle = useContext(HeadContext)
+    const location = useLocation().pathname.split('/')
+    useEffect(()=> setHeadTitle(location[location.length -1]),[])
+    
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
