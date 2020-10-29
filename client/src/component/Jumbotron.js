@@ -8,6 +8,7 @@ function Jumbotron({info:{title,p,h1,quotes,link,footer,btn}}){
     useEffect(()=>{
         orientationChange()
         window.addEventListener('resize', orientationChange)
+        window.addEventListener('orientationchange', orientationChange)
     },[])
 
     const orientationChange = () =>{
