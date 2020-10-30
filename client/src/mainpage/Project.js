@@ -6,14 +6,14 @@ import PortfolioContext from "../component/PortfolioContext"
 import './Project.css'
 
 function Project() {
-    const setHeadTitle = useContext(HeadContext)
+    const [setHeadTitle,setHeadDescription] = useContext(HeadContext)
     const context = useContext(PortfolioContext)
     const pathTitle = useLocation().pathname.split('/')[2]
     const [getProject, setProject] = useState({description:[],tools:[],link:[]})
     const {title, summary, description, tools, github, link} = getProject
     
     useEffect(()=> window.scrollTo(0, 0),[])
-    useEffect(()=> setHeadTitle(pathTitle),[])
+    useEffect(()=> setHeadTitle(title),[getProject])
     useEffect(()=> {
         const project = !context.length? getProject : context.find( ({title}) => title.toLowerCase().replace(' ','-') === pathTitle)
         setProject(project)
@@ -41,7 +41,7 @@ function Project() {
             </div>
 
             <div className='mt-4 row'>
-                {!link.length? <ProjectLink pathTitle={pathTitle} idx={''}/> 
+                {!link.length? <ProjectLink pathTitle={pathTitle} value={github} idx={''}/> 
                     : link.map( (value, key) => <ProjectLink pathTitle={pathTitle} value={value} idx={key} key={key}/>)
                 }
             </div>

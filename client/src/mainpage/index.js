@@ -17,6 +17,7 @@ import Project from "./Project"
 function MainPage() {
     const [projects, setProjects] = useState([])
     const [headTitle, setHeadTitle] = useState()
+    const [headDescription, setHeadDescription] = useState()
 
     useEffect( () => axios.get("/api/project-list").then( ({data}) => setProjects([...data].reverse())),[])
     useEffect( () => {document.title = `Edmund Wong${!headTitle? '' : ` | ${headTitle}`}`}, [headTitle])
@@ -27,7 +28,7 @@ function MainPage() {
             <NavBar/>
             <div style={{marginTop:"3.875em"}}>
                 <div className="body">
-                    <HeadContext.Provider value={setHeadTitle}>
+                    <HeadContext.Provider value={[setHeadTitle,setHeadDescription]}>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/about" component={About}/>
                         <Route exact path="/contact" component={Contact}/>

@@ -1,5 +1,5 @@
 import React, {createContext} from 'react'
 
-const HeadContext = createContext(null) 
+const HeadContext = createContext([]) 
 
 export default HeadContext
