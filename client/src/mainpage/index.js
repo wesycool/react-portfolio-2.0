@@ -20,7 +20,10 @@ function MainPage() {
     const [headDescription, setHeadDescription] = useState()
 
     useEffect( () => axios.get("/api/project-list").then( ({data}) => setProjects([...data].reverse())),[])
-    useEffect( () => {document.title = `Edmund Wong${!headTitle? '' : ` | ${headTitle}`}`}, [headTitle])
+    useEffect( () => {
+        document.title = `Edmund Wong${!headTitle? '' : ` | ${headTitle}`}`
+        document.querySelector('meta[name=description]').setAttribute('content',headDescription)
+    }, [headTitle,headDescription])
 
     return (
       <Router>
