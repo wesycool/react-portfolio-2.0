@@ -5,7 +5,10 @@ import PortfolioContext from "../component/PortfolioContext"
 
 function Portfolio(){
     const [setHeadTitle,setHeadDescription] = useContext(HeadContext)
-    useEffect(()=> setHeadTitle('My Portfolio'),[])
+    useEffect(()=> {
+        setHeadTitle('My Portfolio')
+        setHeadDescription("Hi, I'm Edmund! I'm a Business Analyst and Process Consultant from Toronto.\nI enjoy understanding the thought process of how things works. I also love learning game-changing technology trends and I'm currently into mobile/web development and data science.")
+    },[])
 
     const context = useContext(PortfolioContext)
     const category = new Set(context.map(({category}) => category).sort())

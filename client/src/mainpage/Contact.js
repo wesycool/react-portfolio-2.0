@@ -7,7 +7,10 @@ require('dotenv').config()
 
 function Contact(){
     const [setHeadTitle,setHeadDescription] = useContext(HeadContext)
-    useEffect(()=> setHeadTitle('Contact Me'),[])
+    useEffect(()=> {
+        setHeadTitle('Contact Me')
+        setHeadDescription("Hi, I'm Edmund! I'm a Business Analyst and Process Consultant from Toronto.\nI enjoy understanding the thought process of how things works. I also love learning game-changing technology trends and I'm currently into mobile/web development and data science.")
+    },[])
     
     const firstName = useRef()
     const lastName = useRef()

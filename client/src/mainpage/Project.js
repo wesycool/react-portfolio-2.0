@@ -15,7 +15,7 @@ function Project() {
     useEffect(()=> window.scrollTo(0, 0),[])
     useEffect(()=> {
         setHeadTitle(title)
-        setHeadDescription(description)
+        setHeadDescription(summary)
     },[getProject])
     useEffect(()=> {
         const project = !context.length? getProject : context.find( ({title}) => title.toLowerCase().replace(' ','-') === pathTitle)
