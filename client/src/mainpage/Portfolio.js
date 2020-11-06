@@ -4,10 +4,10 @@ import HeadContext from "../component/HeadContext"
 import PortfolioContext from "../component/PortfolioContext"
 
 function Portfolio(){
-    const [setHeadTitle,setHeadDescription] = useContext(HeadContext)
+    const [setHeadTitle,setHeadDescription,mainHeadDescription] = useContext(HeadContext)
     useEffect(()=> {
         setHeadTitle('My Portfolio')
-        setHeadDescription("Hi, I'm Edmund! I'm a Business Analyst and Process Consultant from Toronto.\nI enjoy understanding the thought process of how things works. I also love learning game-changing technology trends and I'm currently into mobile/web development and data science.")
+        setHeadDescription(mainHeadDescription)
     },[])
 
     const context = useContext(PortfolioContext)

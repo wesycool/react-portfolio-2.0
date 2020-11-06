@@ -17,7 +17,8 @@ import Project from "./Project"
 function MainPage() {
     const [projects, setProjects] = useState([])
     const [headTitle, setHeadTitle] = useState()
-    const [headDescription, setHeadDescription] = useState()
+    const mainHeadDescription = "Hi, I'm Edmund! I'm a Business Process Specialist from Toronto."
+    const [headDescription, setHeadDescription] = useState(mainHeadDescription)
 
     useEffect( () => axios.get("/api/project-list").then( ({data}) => setProjects([...data].reverse())),[])
     useEffect( () => {
@@ -31,7 +32,7 @@ function MainPage() {
             <NavBar/>
             <div style={{marginTop:"3.875em"}}>
                 <div className="body">
-                    <HeadContext.Provider value={[setHeadTitle,setHeadDescription]}>
+                    <HeadContext.Provider value={[setHeadTitle,setHeadDescription,mainHeadDescription]}>
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/about" component={About}/>
                         <Route exact path="/contact" component={Contact}/>
