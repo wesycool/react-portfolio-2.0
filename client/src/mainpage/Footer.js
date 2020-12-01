@@ -17,7 +17,7 @@ function Footer(){
 
                     <nav className="nav col-12 col-sm justify-content-sm-center justify-content-md-end mr-md-2 mr-lg-5">
                         <Link to={{pathname:"https://github.com/wesycool"}} className="nav-link link-secondary" target='_blank'><i className="fab fa-github-square"></i></Link>
-                        <Link to={{pathname:"https://www.linkedin.com/in/ed-wong-bpm/"}} className="nav-link link-secondary" target='_blank'><i className="fab fa-linkedin"></i></Link>
+                        <Link to={{pathname:"https://www.linkedin.com/in/edwongca/"}} className="nav-link link-secondary" target='_blank'><i className="fab fa-linkedin"></i></Link>
                     </nav>
 
                     <div className='col-12 text-secondary' style={{fontSize:'x-small'}}>
