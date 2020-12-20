@@ -15,6 +15,8 @@ import PortfolioContext from "./component/PortfolioContext"
 import Portfolio from "./mainpage/Portfolio"
 import Project from "./mainpage/Project"
 
+import LifeCycle from './component/LifeCycle'
+
 function App() {
   // return (
   //   <Router>
@@ -38,7 +40,9 @@ function App() {
     }, [headTitle,headDescription])
 
     return (
+      
       <Router>
+        <LifeCycle></LifeCycle>
         <div className="MainPage">
             <NavBar/>
             <div style={{marginTop:"3.875em"}}>
