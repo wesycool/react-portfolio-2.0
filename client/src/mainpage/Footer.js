@@ -24,14 +24,8 @@ function Footer(){
                         Copyright © 2020 Edmund Wong. All rights reserved.
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </nav>
-
     )
 }
 

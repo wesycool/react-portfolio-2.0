@@ -1,37 +1,26 @@
-import React, {useRef,useContext, useEffect} from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import emailjs from 'emailjs-com';
-import HeadContext from "../component/HeadContext"
+import {HeadContext} from "../component/Context"
 import './Contact.css'
 require('dotenv').config()
 
-
 function Contact(){
     const [setHeadTitle,setHeadDescription,mainHeadDescription] = useContext(HeadContext)
-    useEffect(()=> {
-        setHeadTitle('Contact Me')
-        setHeadDescription(mainHeadDescription)
-    },[])
-    
-    const firstName = useRef()
-    const lastName = useRef()
-    const email = useRef()
-    const message = useRef()
+    useEffect(() => setHeadTitle('Contact Me'),[])
+    useEffect(() => setHeadDescription(mainHeadDescription),[])
+    const {current} = useRef({})
 
-    const sendMessage = () =>{
-
+    const sendMessage = () => {
+        const {firstName, lastName, email, message} = current
         const template_params = {
-            "reply_to": email.current.value,
-            "from_name": `${firstName.current.value} ${lastName.current.value}`,
+            "reply_to": email.value,
+            "from_name": `${firstName.value} ${lastName.value}`,
             "to_name": "Edmund",
-            "message_html": message.current.value
-         }
+            "message_html": message.value
+        }
 
-         emailjs.send("default_service", "template_mp8gIrQa", template_params, "user_Lb7RlXKq0CTUC0zKpSJZc");
-
-         firstName.current.value = ''
-         lastName.current.value = ''
-         email.current.value = ''
-         message.current.value = ''
+        emailjs.send("default_service", "template_mp8gIrQa", template_params, "user_Lb7RlXKq0CTUC0zKpSJZc")
+        Object.values(current).map(e => e.value = '')
     }
 
     return(
@@ -43,28 +32,26 @@ function Contact(){
                         <div class="mb-3 row">
                             <label for="name" class="form-label">Name</label>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="First name" ref={firstName}/>
+                                <input type="text" class="form-control" placeholder="First name" ref={e => current['firstName'] = e}/>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" ref={lastName}/>
+                                <input type="text" class="form-control" placeholder="Last name" ref={e => current['lastName'] = e}/>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" ref={email} placeholder="name@example.com"/>
+                            <input type="email" class="form-control" ref={e => current['email'] = e} placeholder="name@example.com"/>
                         </div>
 
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" ref={message} rows="5"></textarea>
+                            <textarea class="form-control" ref={e => current['message'] = e} rows="5"></textarea>
                         </div>
 
                         <input type="button" onClick={sendMessage} value="submit" className="btn btn-secondary"/>
                     </div>
-
                 </div>
-
             </div>
         </div>
     )

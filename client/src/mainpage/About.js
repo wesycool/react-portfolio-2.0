@@ -1,30 +1,25 @@
-import React, { useEffect, useContext } from "react"
-import HeadContext from "../component/HeadContext"
-import Jumbotron from "../component/Jumbotron"
+import React, { useEffect, useState, useContext } from "react"
+import { Link } from "react-router-dom";
+import {HeadContext} from "../component/Context"
+import Orientation from "../component/Orientation"
 import './About.css'
-
+import '../component/Jumbotron.css'
 
 function About(){
-    const [setHeadTitle,setHeadDescription,mainHeadDescription] = useContext(HeadContext)
-    useEffect(()=> {
-        setHeadTitle('About Me')
-        setHeadDescription(mainHeadDescription)
-    },[])
-
-    const info = {
-        title : 'about',
-        h1: 'EDMUND WONG.',
-        p : 'ROBOTIC PROCESS AUTOMATION BUSINESS ANALYST.',
-        quotes: false,
-        btn: 'DOWNLOAD RESUME',
-        link: './assets/pdf/resume.pdf'
-    }
-
+    const [ setHeadTitle, setHeadDescription, mainHeadDescription ] = useContext(HeadContext)
+    const [ background, setBackground ] = useState(Orientation())
+    useEffect(() => setHeadTitle('About Me'),[])
+    useEffect(() => setHeadDescription(mainHeadDescription),[])
+    useEffect(() => window.addEventListener('resize', () => setBackground(Orientation())),[])
     
     return(
-        <div>
-            <Jumbotron info={info} />
-            <div>
+        <div className='about-bg jumbotron' style={{backgroundImage:`url(./assets/img/aboutBG-${background}.jpg)`}}>
+            <div className='container-fluid' style={{height: '100%'}}>
+                <blockquote className="ml-md-2 ml-lg-5">
+                    <h1 className='dosis'>EDMUND WONG.</h1>
+                    <p>ROBOTIC PROCESS AUTOMATION BUSINESS ANALYST.</p>
+                    <Link to='./assets/pdf/resume.pdf' className="btn btn-secondary btn-sm" target='_blank'>DOWNLOAD RESUME</Link>
+                </blockquote>
             </div>
         </div>
     )

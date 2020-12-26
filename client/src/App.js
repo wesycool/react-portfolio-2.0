@@ -9,8 +9,7 @@ import Home from "./mainpage/Home"
 import About from "./mainpage/About"
 import Contact from "./mainpage/Contact"
 
-import HeadContext from "./component/HeadContext"
-import PortfolioContext from "./component/PortfolioContext"
+import {HeadContext, PortfolioContext} from "./component/Context"
 import Portfolio from "./mainpage/Portfolio"
 import Project from "./mainpage/Project"
 
@@ -20,12 +19,11 @@ function App() {
   const mainHeadDescription = "Hi, I'm Edmund! I'm a Robotic Process Automation Business Analyst from Toronto."
   const [headDescription, setHeadDescription] = useState(mainHeadDescription)
 
-  useEffect( () => axios.get("/api/project-list").then( ({data}) => setProjects([...data].reverse())),[])
-  useEffect( () => {
+  useEffect(() => axios.get("/api/project-list").then( ({data}) => setProjects([...data].reverse())),[])
+  useEffect(() => {
       document.title = `Edmund Wong${!headTitle? '' : ` | ${headTitle}`}`
       document.querySelector('meta[name=description]').setAttribute('content',headDescription)
   }, [headTitle,headDescription])
-
 
   return (
     <Router>
@@ -44,7 +42,6 @@ function App() {
               </PortfolioContext.Provider>
             </HeadContext.Provider>
           </div>
-
           <Footer/>
         </div>
       </div>
