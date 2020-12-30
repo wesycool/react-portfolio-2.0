@@ -1,18 +1,14 @@
 import React, { useRef, useContext, useEffect } from "react";
 import emailjs from 'emailjs-com';
+import env from "react-dotenv";
 import {HeadContext} from "../component/Context"
 import './Contact.css'
-require('dotenv').config()
 
 function Contact(){
     const [setHeadTitle,setHeadDescription,mainHeadDescription] = useContext(HeadContext)
     useEffect(() => setHeadTitle('Contact Me'),[])
     useEffect(() => setHeadDescription(mainHeadDescription),[])
     const {current} = useRef({})
-
-    console.log(process.env.SERVICEID)
-    console.log(process.env.TEMPLATEID)
-    console.log(process.env.USERID)
 
     const sendMessage = () => {
         const {firstName, lastName, email, message} = current
@@ -23,7 +19,7 @@ function Contact(){
             "message_html": message.value
         }
 
-        emailjs.send("default_service", "template_mp8gIrQa", template_params, "user_Lb7RlXKq0CTUC0zKpSJZc")
+        emailjs.send(env.SERVICEID, env.TEMPLATEID, template_params, env.USERID)
         Object.values(current).map(e => e.value = '')
     }
 
