@@ -1,9 +1,7 @@
 import React from "react"
-import { Link, useLocation } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function NavBar() {
-    const {pathname} = useLocation()
-
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow fixed-top">
             <div className="container-fluid">
@@ -20,22 +18,22 @@ function NavBar() {
                     <div className="collapse navbar-collapse col-12 col-md mr-md-2 mr-lg-5 justify-content-end" id="navbarSupportedContent">
                         <ul className="navbar-nav mb-md-0 mt-2">
                             <li className="nav-item text-uppercase">
-                                <Link to='/' className={`nav-link ${`/${pathname.split('/')[1]}` === '/' ? "active" : ""}`}>Home</Link>
+                                <Link to='/' className={`nav-link ${useRouteMatch('/').isExact? "active" : ""}`}>Home</Link>
                             </li>
                             {/* <li className="nav-item text-uppercase">
-                                <Link to='/service' className={`nav-link ${`/${pathname.split('/')[1]}` === '/service' ? "active" : ""}`}>Service</Link>
+                                <Link to='/service' className={`nav-link ${useRouteMatch('/service')? "active" : ""}`}>Service</Link>
                             </li> */}
                             <li className="nav-item text-uppercase">
-                                <Link to='/portfolio' className={`nav-link ${`/${pathname.split('/')[1]}` === '/portfolio' ? "active" : ""}`}>Portfolio</Link>
+                                <Link to='/portfolio' className={`nav-link ${useRouteMatch('/portfolio')? "active" : ""}`}>Portfolio</Link>
                             </li>
                             {/* <li className="nav-item text-uppercase">
-                                <Link to='/blog' className={`nav-link ${`/${pathname.split('/')[1]}` === '/blog' ? "active" : ""}`}>Blog</Link>
+                                <Link to='/blog' className={`nav-link ${useRouteMatch('/blog')? "active" : ""}`}>Blog</Link>
                             </li> */}
                             <li className="nav-item text-uppercase">
-                                <Link to='/about' className={`nav-link ${`/${pathname.split('/')[1]}` === '/about' ? "active" : ""}`}>About</Link>
+                                <Link to='/about' className={`nav-link ${useRouteMatch('/about')? "active" : ""}`}>About</Link>
                             </li>
                             <li className="nav-item text-uppercase">
-                                <Link to='/contact' className={`nav-link ${`/${pathname.split('/')[1]}` === '/contact' ? "active" : ""}`}>Contact</Link>
+                                <Link to='/contact' className={`nav-link ${useRouteMatch('/contact')? "active" : ""}`}>Contact</Link>
                             </li>
                         </ul>
                     </div>

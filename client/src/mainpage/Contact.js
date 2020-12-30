@@ -10,6 +10,10 @@ function Contact(){
     useEffect(() => setHeadDescription(mainHeadDescription),[])
     const {current} = useRef({})
 
+    console.log(process.env.SERVICEID)
+    console.log(process.env.TEMPLATEID)
+    console.log(process.env.USERID)
+
     const sendMessage = () => {
         const {firstName, lastName, email, message} = current
         const template_params = {
