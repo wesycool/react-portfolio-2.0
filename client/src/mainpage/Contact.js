@@ -1,7 +1,6 @@
 import React, { useRef, useContext, useEffect } from "react";
-import emailjs from 'emailjs-com';
-import env from "react-dotenv";
 import {HeadContext} from "../component/Context"
+import axios from 'axios'
 import './Contact.css'
 
 function Contact(){
@@ -18,8 +17,7 @@ function Contact(){
             "to_name": "Edmund",
             "message_html": message.value
         }
-
-        emailjs.send(env.SERVICEID, env.TEMPLATEID, template_params, env.USERID)
+        axios.post('/api/email',template_params)
         Object.values(current).map(e => e.value = '')
     }
 

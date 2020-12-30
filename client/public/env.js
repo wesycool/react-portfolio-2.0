@@ -176,8 +176,5 @@ window.env = {
   "npm_node_execpath": "/usr/local/bin/node",
   "npm_config_prefix": "/usr/local",
   "npm_config_link": "",
-  "npm_config_format_package_lock": "true",
-  "SERVICEID": "default_service",
-  "TEMPLATEID": "template_mp8gIrQa",
-  "USERID": "user_Lb7RlXKq0CTUC0zKpSJZc"
+  "npm_config_format_package_lock": "true"
 };
