@@ -2,7 +2,7 @@ const orm = require('./orm')
 const axios = require('axios')
 require('dotenv').config()
 
-function router( app ){
+const router = app => {
     app.get('/api/project-list', async (req,res) =>{
         res.send(await orm.projectList())
     })

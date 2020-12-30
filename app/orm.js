@@ -7,7 +7,7 @@ const db = require( './models' );
 
 const orm = {
     projectList: async () => { return await db.Project.find({}) },
-    postProject: async (body) => { return await db.Project.create(body) }
+    postProject: async body => { return await db.Project.create(body) }
 }
 
 module.exports = orm
